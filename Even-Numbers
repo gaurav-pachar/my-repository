@@ -1,0 +1,18 @@
+import React from 'react';
+
+const App = () => {
+  arr = [1, 4, 7, 3, 8, 9, 5, 2, 6];
+
+  const newArr = [];
+
+  for (let num of arr) {
+    if (num % 2 === 0) {
+      newArr.push(num);
+    }
+  }
+  const numbers = newArr.join();
+  
+  return <div className="App">Even numbers in the array are:{numbers}</div>;
+};
+
+export default App;
