@@ -1,0 +1,16 @@
+import "./styles.css";
+import React, { useEffect } from 'react';
+
+export default function App() {
+  useEffect(() => {
+    const Url = 'http://www.example.com/api/get/1';
+    fetch(Url)
+      .then((response) => response.json())
+      .then((data) => console.log('This is your data', data));
+  });
+  return (
+    <div className="App">
+      
+    </div>
+  );
+}
