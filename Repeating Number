@@ -1,0 +1,28 @@
+import React from 'react';
+
+export default function App() {
+  const arr = [2, 4, 5, 7, 9, 11, 11, 12, 15, 16, 17];
+  let number = {};
+  var sameNmbr = [];
+
+  arr.forEach(rptngNmbr);
+
+  function rptngNmbr(value, index) {
+    
+    if (index === 0) {
+      number = value;
+    } else if (index !== 0) {
+      if (value !== number) {
+        number = value;
+      } else if (value === number) {
+        sameNmbr.push(number);
+      }
+    }
+  }
+  if (sameNmbr.length === 0) {
+    sameNmbr = "There is no repeating number";
+  }
+  
+
+  return <div className="App">Repeating Number is: {sameNmbr}</div>;
+}
