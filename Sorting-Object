@@ -1,0 +1,30 @@
+import React from 'react';
+
+export default function App() {
+  
+  const unorderedObj = {
+  '4': 'abc',
+  '10': 'abc2',
+  '5': 'abc3',
+  '6': 'abc5'
+};
+
+console.log(JSON.stringify(unorderedObj));
+// '{"4":"abc","10":"abc2","5":"abc3","6":"abc5"}'
+
+const orderedObj = Object.keys(unorderedObj).sort().reduce(
+  (obj, key) => { 
+    obj[key] = unorderedObj[key]; 
+    return obj;
+  },{}
+);
+
+console.log(JSON.stringify(orderedObj));
+// '{"4":"abc","5":"abc3","6":"abc5","10":"abc2"}'
+
+  return (
+    <div className="App">
+      
+    </div>
+  );
+}
