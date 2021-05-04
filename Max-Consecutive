@@ -1,0 +1,28 @@
+import React from 'react';
+
+const App = () => {
+  let maxCount = 0;
+  let crntCount = 0;
+
+  const binaryArr = [ 0,1,1,0,1,0,1,0,1,1,1,1,1,0,1,1,1,0,0,0,0];
+
+  function counter(value, index) {
+    console.log(index);
+    if (value === 1) {
+      crntCount++;
+    } else {
+      if (crntCount > maxCount) {
+        maxCount = crntCount;
+      }
+      crntCount = 0;
+    }
+  }
+
+  binaryArr.forEach(counter);
+
+  return (
+    <div className="App">Max number of consective 1's are: {maxCount}</div>
+  );
+};
+
+export default App;
